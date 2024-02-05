@@ -642,3 +642,121 @@ export const verifyCustomProductsAreAddedToCart = () => {
     cy.get('.cart_description').contains('Winter Top').should('exist');
 
 };
+
+export const verifyProductsPage = () => {
+
+    cy.location('pathname').should('eq', '/products');
+
+};
+
+export const verifyWriteYourReview = () => {
+
+    cy.get('.active > a')
+    .contains('Write Your Review')
+    .should('be.visible');
+
+};
+
+export const fillInReviewDetails = () => {
+
+    cy.get('#name').type('random name');
+    cy.get('#email').type('random@hotmail.com');
+    cy.get('#review').type('this is a review');
+
+};
+
+export const clickSubmitReviewButton = () => {
+
+    cy.get('#button-review').click();
+
+};
+
+export const verifyReviewSuccessMessage = () => {
+
+    cy.get('.alert-success > span')
+    .contains('Thank you for your review.')
+    .should('be.visible');
+
+};
+
+export const scrollToBottomOfPage = () => {
+
+    cy.scrollTo('bottom');
+
+};
+
+export const verifyRecommendedItemsVisible = () => {
+
+    cy.get('.recommended_items > .title').should('be.visible');
+
+};
+
+export const clickAddToCartOnRecommendedProduct = () => {
+
+    cy.get('.active > :nth-child(1) > .product-image-wrapper > .single-products > .productinfo > .btn')
+    .click();
+    
+};
+
+export const verifyRecommendedIsDisplayedInCart = () => {
+
+    cy.get('h4 > a').contains('Stylish Dress');
+
+};
+
+export const verifyBillingAddress = () => {
+
+    cy.get('#address_delivery > .address_firstname')
+    .contains('Mr. firstname lastname');
+
+    cy.get('#address_delivery > :nth-child(3)')
+    .contains('random company');
+
+    cy.get('#address_delivery > :nth-child(4)')
+    .contains('random address');
+
+    cy.get('#address_delivery > :nth-child(5)')
+    .contains('random address two');
+
+    cy.get('#address_delivery > :nth-child(6)')
+    .contains('random city');
+
+    cy.get('#address_delivery > .address_country_name')
+    .contains('Singapore');
+
+    cy.get('#address_delivery > .address_phone')
+    .contains('123456789');
+
+};
+
+export const clickDownloadInvoiceButton = () => {
+
+    cy.contains('Download Invoice').click();
+
+};
+
+export const verifyInvoiceDownloaded = () => {
+
+    cy.readFile('cypress/downloads/invoice.txt')
+
+};
+
+export const clickScrollUpButton = () => {
+
+    cy.get('#scrollUp').click();
+
+}
+
+export const verifyTextTitleIsVisible = () => {
+
+    cy.get('.active > :nth-child(1) > h2')
+    .contains('Full-Fledged practice website for Automation Engineers')
+    .should('be.visible');
+
+};
+
+export const scrollUpToPage = () => {
+
+    cy.scrollTo('top');
+
+}
