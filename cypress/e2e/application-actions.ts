@@ -737,7 +737,8 @@ export const clickDownloadInvoiceButton = () => {
 
 export const verifyInvoiceDownloaded = () => {
 
-    cy.readFile('cypress/downloads/invoice.txt')
+    //cy.readFile('cypress/downloads/invoice.txt')
+    cy.readFile('home/christopherespena/Downloads/invoice.txt')
 
 };
 
