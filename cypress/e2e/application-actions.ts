@@ -738,8 +738,8 @@ export const clickDownloadInvoiceButton = () => {
 export const verifyInvoiceDownloaded = () => {
 
     //cy.readFile('cypress/downloads/invoice.txt')
-    cy.readFile('home/christopherespena/Downloads/invoice.txt')
-
+    cy.readFile('/home/christopherespena/Downloads/invoice.txt')
+    // note to self: start with backslash
 };
 
 export const clickScrollUpButton = () => {
